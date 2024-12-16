@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* 
+- Fix floating nav to be direct links 
+- 1 font & 2 column media queries 
+
+*/
+
+/*-------------------------------------->
+Local Utils 
+<--------------------------------------*/
+
+.container {
+	width: min(100% - 30px, 1100px);
+	margin-inline: auto;
+}
+
+.block {
+	display: block;
+}
+
+.visible {
+	transform: translateY(0);
+}
+
+.flex {
+	display: flex;
+}
+.f-col {
+	flex-direction: column;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.hidden {
+	opacity: 0;
+	display: none;
+}
+
+/*-------------------------------------->
+Roots and Resets
+<--------------------------------------*/
+
+/*				One is closest 				*/
+:root {
+	--app-layer-one: #012;
+	--app-layer-two: #123;
+	--app-layer-three: #234;
+	--app-layer-four: #345;
+	--app-bg-clr: #404;
+
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	background-color: var(--app-layer-one);
+	overflow-x: hidden;
+	color: #fefefe;
+	font-family: "Poppins", Arial, sans-serif;
+}
+
+p {
+	font-size: 1.6rem;
+	color: var(--app-layer-one);
+
+	a {
+		font-weight: 500;
+		padding: 25px;
+		border-radius: 50px;
+		background-color: rgb(240 240 240 / 0);
+		transition: all 0.75s ease-in;
+		line-height: 100px;
+	}
+
+	a:hover {
+		background-color: rgb(240 240 240 / 0.4);
+	}
+}
+
+h1 {
+	width: 100%;
+	font-size: 6rem;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 50px;
+	z-index: 10;
+	color: #fefefe;
+}
+
+/*-------------------------------------->
+HERO BANNER 
+<--------------------------------------*/
+
+header {
+	position: relative;
+}
+
+.title-wrapper {
+	width: 100%;
+	height: 100px; 
+	text-align: center;
+}
+
+h1 {
+	line-height: 150px;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	top: 10px;
+	z-index: 100;
+}
+
+.nightsky { 
+	position: relative;
+	height: 400px;
+	width: 100%;
+	background: #fff url('../img/nightsky.jpg') no-repeat top left;
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: -2000;
+}
+
+main {
+	position: relative;
+	padding: 25px;
+  column-count: 3;
+  column-gap: 25px; 
+	background-color: #012;
+	z-index: 500;
+
+	img {
+  width: 100%; 
+  margin-bottom: 25px; 
+	}
+}
+
+@keyframes navBar {
+	0% {
+		transform: translateY(9svw);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 800px) {
+  h1 {
+		font-size: 4rem;
+	}
+	main {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 525px) {
+  h1 {
+		font-size: 3rem;
+	}
+	main {
+    column-count: 1;
+  }
+}

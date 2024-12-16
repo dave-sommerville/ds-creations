@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">  <!-- May want to consider expanding for SEO-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dave Sommerville">
+  <meta name="description" content="Explore Unreal City - a hub for web development and design tips. Learn HTML, CSS, JavaScript, and more.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Unreal City</title>
+  <!--        NEEDS FAVICON (USE ALL THREE IMAGE SIZINGS)-->
+  <!--  External stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!--    Local Stylesheets -->
+  <link rel="stylesheet" href="./src/css/reset.css" media="all">
+  <link rel="stylesheet" href="./src/css/style.css" media="all">
+  <link rel="stylesheet" href="./src/css/utils.css" media="all">
+	<script src="./src/js/script.js" defer></script>
+</head>
+<body>
+  <header>
+		<h1>UNREAL CITY</h1>
+		<img class="cityscape-front" src="./src/img/cityscape-short.svg">
+		<img class="cityscape-mid" src="./src/img/cityscape-front.svg"> 
+		<img class="cityscape-back" src="./src/img/cityscape-back.svg"> 
+		<img class="mountains" src="./src/img/mountain.svg">
+	</header>
+		<div class="banner-test"></div>
+	<main class="flex f-col wrapper">
+		<nav class="container">
+			<ul class="flex">
+				<li class="circle cursor-pointer about">
+					<i class="fa-solid fa-question"
+						title="About"	
+					></i>
+				</li>
+				<li class="circle cursor-pointer gallery">
+					<i class="fa-solid fa-camera-retro"
+						title="Photo Gallery"
+					></i>
+				</li>
+				<li class="circle cursor-pointer poetry">
+					<i class="fa-solid fa-pen-nib"
+						title="Poetry"
+					></i>
+				</li>
+				<li class="circle cursor-pointer games">
+					<i class="fa-solid fa-gamepad"
+						title="Games Room"
+					></i>
+				</li>
+			</ul>
+		</nav>
+		<div class="about-modal modal hidden">
+			<h3>
+				About Me
+			</h3>
+			<p>
+				I am, at heart, a creator first and foremost. I have dabbled
+				with every medium that time and luxury would afford. I fell
+				for the world at a young age, and I have been writing love
+				letters to it ever since. 
+			</p>
+			<p>
+				I have set my sights upon making a living by developing software.
+				It is something that I am working very hard at, but equally
+				driven to play with. Unreal City is my blank canvas. My space of
+				yet to be determined.
+			</p>
+			<p>
+				<a 
+					href="https://dave-sommerville.github.io/dave-the-dev/#portfolio-title"
+				>
+					See my polished side here
+				</a>
+			</p>
+		</div>
+		<div class="gallery-modal modal hidden">
+			<h3>
+				Gallery
+			</h3>
+			<p>
+				Sometimes I like to walk around my city. I like to take in the angles 
+				and the lines. Feel the colours and see the textures. Sometimes I try 
+				to catch that impression. 
+			</p>
+			<p><a href="./gallery.html">
+				See what I mean here
+			</a></p>
+		</div>
+		<div class="poetry-modal modal hidden">
+			<h3>
+				Poetry
+			</h3>
+			<p>
+				I've always had a deep fondness for poetry, especially as a young man.
+				Expressing myself has rarely been my strong suit, but sometimes it's 
+				because what I have to say is weird and pretentious. 
+			</p>
+			<p><a href="./poetry.html">
+				See my weird and pretentious words here
+			</a></p>
+		</div>
+		<div class="games-modal modal hidden">
+			<h3>
+				Games
+			</h3>
+			<p>
+				Since I've started learning web development, I've gotten to
+				create a few fun things that I can share. I've got a couple
+				here. 
+			</p>
+			<p><a href="https://dave-sommerville.github.io/blackjack/">
+				See my version of Blackjack here
+			</a></p>
+			<p><a href="https://dave-sommerville.github.io/script-scavengers/">
+				See my typing game here
+			</a></p>
+		</div>
+		<!-- <div class="hidden-modal modal hidden flex">
+			<h3>
+				Experimental
+			</h3>
+			<div class="cracks-effect-1">
+				<img src="./src/img/cracks.png">
+			</div>
+			<div class="cracks-effect-1">
+				<img src="./src/img/cracks.png">
+			</div>						
+			<p><a href="https://dave-sommerville.github.io/script-scavengers/">
+				click here
+			</a></p>
+		</div> -->
+		<section class="display">
+			<h2 class="left">UNREAL</h2>
+			<h2 class="right">CITY</h2>
+			<img class="computer" src="./src/img/computer.png">
+		</section>
+	</main>
+	<footer>
+		<!-- <p>
+			<i class="fa-solid fa-egg cursor-pointer hidden-button modal"></i>
+		</p> -->
+	</footer>
+</body>
+</html>

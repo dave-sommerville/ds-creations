@@ -1,0 +1,431 @@
+@charset "utf-8";
+/*-------------------------------------->
+- Ensure responsiveness 
+	- Text
+	- Icons
+- Clean up css and js
+- Add home button to other pages (external open games)
+- Look into media resource fails
+
+<--------------------------------------*/
+
+/*-------------------------------------->
+Local Utils 
+<--------------------------------------*/
+
+.container {
+	width: min(100% - 30px, 1100px);
+	margin-inline: auto;
+}
+
+.block {
+	display: block;
+}
+
+.visible {
+	transform: translateY(0);
+}
+
+.flex {
+	display: flex;
+}
+.f-col {
+	flex-direction: column;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.hidden {
+	opacity: 0;
+	display: none;
+}
+
+/*-------------------------------------->
+Roots and Resets
+<--------------------------------------*/
+
+/*				One is closest 				*/
+:root {
+	--app-layer-one: #012;
+	--app-layer-two: #123;
+	--app-layer-three: #234;
+	--app-layer-four: #345;
+	--app-bg-clr: #404;
+
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	background-color: var(--app-layer-one);
+	overflow-x: hidden;
+	color: #fefefe;
+	font-family: "Poppins", Arial, sans-serif;
+}
+
+p {
+	font-size: 1.6rem;
+	color: var(--app-layer-one);
+
+	a {
+		font-weight: 500;
+		padding: 25px;
+		border-radius: 50px;
+		background-color: rgb(240 240 240 / 0);
+		transition: all 0.75s ease-in;
+		line-height: 100px;
+	}
+
+	a:hover {
+		background-color: rgb(240 240 240 / 0.4);
+	}
+}
+
+h1 {
+	width: 100%;
+	font-size: 6rem;
+	font-weight: 500;
+	position: fixed;
+	text-align: center;
+	margin-top: 50px;
+	z-index: 10;
+	color: #fefefe;
+}
+
+h2 {
+	font-size: 7rem;
+	color: #fff;
+	opacity: 0.7;
+	font-weight: 700;
+	letter-spacing: -75px;
+	writing-mode: vertical-rl; /* Or vertical-lr */
+  text-orientation: upright; 
+}
+
+.right {
+	position: absolute;
+	top: 0;
+	right: -2svw;
+	z-index: 3000;
+
+}
+
+.left {
+	position: absolute;
+	top: 0;
+	left: -2svw;
+	z-index: 3000;
+}
+
+h3 {
+	font-size: 3.2rem;
+}
+/*-------------------------------------->
+HERO BANNER 
+<--------------------------------------*/
+
+header { 
+	position: relative;
+	height: 70svh;
+	width: 100%;
+	background: #fff url('../img/nightsky.jpg') no-repeat top left;
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: -2000;
+}
+
+.mountains {
+	width: 100svw;
+	height: 600px;
+	object-fit: cover;
+	position: absolute;
+	bottom: 4svw;
+	z-index: -100;
+	animation-name: zFarBack;
+	animation-timeline: scroll();
+	animation-duration: 1s;
+}
+
+.cityscape-back {
+	width: 100svw;
+	height: 400px;
+	object-fit: cover;
+	position: absolute;
+	bottom: -5svw;
+	z-index: 50;
+	animation-name: zBack;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
+}
+
+.cityscape-mid {
+	width: 100svw;
+	height: 600px;
+	object-fit: cover;
+	position: absolute;
+	bottom: 5svw;
+	z-index: 0;
+	animation-name: zMid;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
+}
+
+.cityscape-front {
+	width: 100svw;
+	height: 500px;
+	object-fit: cover;
+	position: absolute;
+	bottom: -15svw;
+	z-index: 100;
+  animation-name: zFront;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
+
+}
+
+nav {
+	width: 100%;
+	height: 150px;
+	line-height: 150px;
+	padding: 20px;
+	font-size: 3rem;
+	color: #fefefe;
+	position: absolute;
+	top: -130px;
+	transform: translateY(100px);
+	z-index: 300;
+	animation-name: navBar;
+	animation-timeline: scroll();
+	animation-duration: 1s; 
+
+
+	ul {
+		height: 100px;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	li {
+		text-align: center;
+		color: #fefefe;
+		font-size: 3rem;
+		height: 100px;
+		width: 100px;
+		line-height: 100px;
+		background-color: #456;
+	}
+}
+
+/*-------------------------------------->
+LANDING
+<--------------------------------------*/
+
+.wrapper {
+	width: 100%;
+	height: 800px;
+	padding: 40px;
+	justify-content: flex-end;
+	align-items: center;
+	position: relative;
+	z-index: 500;
+	background-color: var(--app-layer-one);
+
+	&::before {
+		content: '';
+		width: 100svw;
+		height: 150px;
+		position: absolute;
+		top: -75px;
+		z-index: 100;
+		background-color: var(--app-layer-one);
+	}
+
+}
+
+.display {
+	width: 50svw;
+	min-width: 40svw; 
+	height: 60svh;
+	background: #456 url('../img/clr-wave.gif') no-repeat center center;
+	background-size: cover;
+	border-radius: 15px;
+	position: relative;
+	overflow: hidden;
+	z-index: 500;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 
+		-2px -2px 5px rgba(255, 255, 255, 0.8);
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		border-radius: 15px;
+		background: url('../img/concrete.png') no-repeat center center;
+		background-size: cover;
+		border: solid 1px rgb(250 250 255 / 0.5);
+	}
+}
+
+.computer {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	animation: enbiggen 400s ease 3s forwards;
+}
+
+.about-modal, .gallery-modal, .poetry-modal, .games-modal { 
+	width: 50svw;
+	min-width: 40svw; 
+	height: 60svh;
+	color: #122;
+	font-size: 4rem;
+	padding: 15px; 
+	background-size: cover;
+	background-color: rgba(200, 200, 200, 0.5);
+	border-radius: 15px;
+	backdrop-filter: blur(15px); 
+	z-index: 2000;
+	position: absolute;
+	bottom: 40px;
+}
+
+.about-modal {
+	p {
+		font-size: 1.4rem;
+	}
+}
+
+footer {
+	width: 100%;
+	height: 20px;
+	text-align: center;
+
+	i {
+		color: #fefefe;
+	}
+}
+
+.hidden-modal { 
+	width: 50svw;
+	min-width: 40svw; 
+	height: 60svh;
+	color: #122;
+	font-size: 4rem;
+	padding: 15px; 
+	background-size: cover;
+	background-color: var(--app-layer-one);
+	border-radius: 15px;
+	backdrop-filter: blur(15px); 
+	z-index: 2000;
+	position: absolute;
+	bottom: 40px;
+}
+
+:root {
+	--cracks-w: 500px;
+	--cracks-l: 400px;
+}
+
+.cracks-effect-1 {
+	--_cracks-w: var(--cracks-w);
+	--_cracks-l: var(--cracks-l);
+
+	width: 400px;
+	height: 500px;
+	position: relative; 
+
+	img {
+			width: 400px;
+			height: 500px;
+	}
+
+	&::before {
+			content: "";
+			position: absolute; 
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff url("../img/vs-code-bg.jpg") repeat center center;
+			background-attachment: fixed;
+			background-size: cover; 
+			z-index: -1; 
+	}
+}
+
+
+
+/*-------------------------------------->
+Animations 
+<--------------------------------------*/
+
+@keyframes zFarBack {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 30svw);
+	}
+}
+
+@keyframes zBack {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, -15svw);
+	}
+}
+
+@keyframes zMid {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 7svw);
+	}
+}
+
+@keyframes zFront {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, -16svw);
+	}
+}
+
+@keyframes enbiggen {
+	0% {
+		transform: scale(1) translate(0, 0);
+	}
+	100% {
+		transform: scale(25) translate(0, -0.75svw);
+	}
+}
+
+@keyframes navBar {
+	0% {
+		transform: translateY(9svw);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
