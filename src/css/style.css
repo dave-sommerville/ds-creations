@@ -66,7 +66,6 @@ ul {
 }
 
 body {
-	background-color: var(--app-layer-one);
 	overflow-x: hidden;
 	color: #fefefe;
 	font-family: "Poppins", Arial, sans-serif;
@@ -123,12 +122,13 @@ HERO BANNER - PARALLAX
   justify-content: center;
   align-items: center;
   margin: 100px 0;
+  background-color: antiquewhite;
 }
 
 .content-wrapper {
   width: 500px;
   height: 500px;
-  border: solid 2px #fff;
+  border: solid 2px #d16;
   display: flex;
   padding: 10px;
 
@@ -183,6 +183,29 @@ HERO BANNER - PARALLAX
 
 .arrow:hover {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*-------------------------------------->
+  Text Album
+<--------------------------------------*/
+
+.text-album {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  border: solid 2px #012;
+  display: flex;
+  padding: 10px;
+  overflow-y: scroll;
 }
 
 /*-------------------------------------->
