@@ -25,3 +25,27 @@ listen('scroll', window, () => {
   layers[1].style.transform = `translateY(${scrollY * 0.6}px)`; // Middle speed
   layers[2].style.transform = `translateY(${scrollY * 0.9}px)`; // Fastest
 });
+
+
+const contentWrapper = document.querySelector('.content-wrapper');
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+
+// Width of each box + gap
+const boxWidth = contentWrapper.querySelector('.box').offsetWidth + 20; // 20px gap
+
+// Scroll to the next box
+scrollRightBtn.addEventListener('click', () => {
+  contentWrapper.scrollBy({
+    left: boxWidth,
+    behavior: 'smooth',
+  });
+});
+
+// Scroll to the previous box
+scrollLeftBtn.addEventListener('click', () => {
+  contentWrapper.scrollBy({
+    left: -boxWidth,
+    behavior: 'smooth',
+  });
+});
