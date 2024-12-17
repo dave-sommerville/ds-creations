@@ -72,7 +72,7 @@ p {
 }
 
 /*-------------------------------------->
-HERO BANNER 
+HERO BANNER - PARALLAX
 <--------------------------------------*/
 .hero {
   position: relative;
@@ -81,7 +81,6 @@ HERO BANNER
   background-color: #000; /* Fallback color */
 }
 
-/* Parallax Layers */
 .cityscape {
   position: absolute;
   top: 0;
@@ -108,11 +107,16 @@ HERO BANNER
   z-index: 3;
 }
 
-.albums {
-  width: 100%;
+/*-------------------------------------->
+SNAP Y AXIS ALBUM TEMPLATE
+<--------------------------------------*/
+
+.snappy-album {
+  position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  margin: 100px 0;
 }
 
 .content-wrapper {
@@ -120,46 +124,65 @@ HERO BANNER
   height: 500px;
   border: solid 2px #fff;
   display: flex;
+  padding: 10px;
+
   overflow-x: auto;
-  scroll-snap-type: x mandatory; /* Snap horizontally */
-  scroll-behavior: smooth; /* Smooth scrolling effect */
-  gap: 20px; /* Space between boxes */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 10px;
 }
 
-/* Individual boxes */
+/*    Removing scroll bar styles   */
+.content-wrapper {
+  -webkit-overflow-scrolling: touch; 
+}
+.content-wrapper::-webkit-scrollbar {
+  display: none; 
+}
+.content-wrapper {
+  scrollbar-width: none;
+}
+.content-wrapper {
+  -ms-overflow-style: none; 
+}
+
 .box {
-  flex: 0 0 100%; /* Each box takes full width of the container */
-  height: 460px;
+  flex: 0 0 100%; 
+  height: 480px;
   background-color: #404;
-  scroll-snap-align: center; /* Snap box to center */
+  scroll-snap-align: center; 
 }
 
-/* Arrow buttons */
+/*  Scrolling arrows to replace scroll bar   */
 .arrow {
-  position: absolute;
+  position: absolute; 
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 24px;
-  padding: 10px 15px;
+  padding: 10px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10; 
+  border-radius: 50%; 
+  transition: background-color 0.3s ease;
 }
-
 .arrow.left {
-  left: 0;
+  left: calc(50% - 250px + 10px); 
 }
-
 .arrow.right {
-  right: 0;
+  right: calc(50% - 250px + 10px); 
 }
 
 .arrow:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+
+/*-------------------------------------->
+Experimental "Cracks" illusion 
+<--------------------------------------*/
 :root {
 	--cracks-w: 500px;
 	--cracks-l: 400px;

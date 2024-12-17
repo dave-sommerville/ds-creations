@@ -1,5 +1,9 @@
 'use strict';
 
+/*-------------------------------------->
+  UTILITY FUNCTIONS 
+<--------------------------------------*/
+
 function select(selector, scope = document) {
   return scope.querySelector(selector);
 }
@@ -14,36 +18,38 @@ function listen(event, element, callback) {
   }
 }
 
-// Parallax Effect
+/*-------------------------------------->
+HERO BANNER - PARALLAX
+<--------------------------------------*/
+
 const layers = selectAll('.cityscape');
 
 listen('scroll', window, () => {
   const scrollY = window.scrollY;
 
-  // Move each layer at different speeds
-  layers[0].style.transform = `translateY(${scrollY * 0.3}px)`; // Slowest
-  layers[1].style.transform = `translateY(${scrollY * 0.6}px)`; // Middle speed
-  layers[2].style.transform = `translateY(${scrollY * 0.9}px)`; // Fastest
+                                        // Rate of change specified here
+  layers[0].style.transform = `translateY(${scrollY * 0.3}px)`; 
+  layers[1].style.transform = `translateY(${scrollY * 0.6}px)`; 
+  layers[2].style.transform = `translateY(${scrollY * 0.9}px)`; 
 });
 
+/*-------------------------------------->
+  SNAPPY ALBUMS (REMBER TO CHANGE IF MULTIPLE ALBUMS ADDED)
+<--------------------------------------*/
+const contentWrapper = select('.content-wrapper');
+const scrollLeftBtn = select('.y-album-left');
+const scrollRightBtn = select('.y-album-right');
 
-const contentWrapper = document.querySelector('.content-wrapper');
-const scrollLeftBtn = document.getElementById('scrollLeft');
-const scrollRightBtn = document.getElementById('scrollRight');
+const boxWidth = contentWrapper.querySelector('.box').offsetWidth + 10;
 
-// Width of each box + gap
-const boxWidth = contentWrapper.querySelector('.box').offsetWidth + 20; // 20px gap
-
-// Scroll to the next box
-scrollRightBtn.addEventListener('click', () => {
+listen('click', scrollRightBtn, () => {
   contentWrapper.scrollBy({
     left: boxWidth,
     behavior: 'smooth',
   });
 });
 
-// Scroll to the previous box
-scrollLeftBtn.addEventListener('click', () => {
+listen('click', scrollLeftBtn, () => {
   contentWrapper.scrollBy({
     left: -boxWidth,
     behavior: 'smooth',
