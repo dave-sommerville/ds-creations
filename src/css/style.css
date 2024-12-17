@@ -1,4 +1,10 @@
 @charset "utf-8";
+/*
+  - Responsiveness needed on snap container 
+  - Responsiveness needed on background cityscape
+
+*/
+
 /*-------------------------------------->
 Local Utils 
 <--------------------------------------*/
@@ -108,7 +114,7 @@ HERO BANNER - PARALLAX
 }
 
 /*-------------------------------------->
-SNAP Y AXIS ALBUM TEMPLATE
+  Snap Y axis album template
 <--------------------------------------*/
 
 .snappy-album {
@@ -179,9 +185,31 @@ SNAP Y AXIS ALBUM TEMPLATE
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/*-------------------------------------->
+  Content Stream
+<--------------------------------------*/
+
+.content-stream {
+  columns: 280px 3;
+  column-gap: 30px;
+}
+
+.full-width {
+  column-span: all;
+}
+.no-break {
+  break-inside: avoid;
+}
+
+.filler {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #345;
+  margin: 30px 0;
+}
 
 /*-------------------------------------->
-Experimental "Cracks" illusion 
+  Experimental "Cracks" illusion 
 <--------------------------------------*/
 :root {
 	--cracks-w: 500px;
