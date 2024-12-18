@@ -1,8 +1,23 @@
 @charset "utf-8";
 /*
-  - Responsiveness needed on snap container 
-  - Responsiveness needed on background cityscape
-
+  - Adjust parallax rates 
+    - Adjust background color/image
+    - Responsive adjustment of background
+  - Prepared list of images (single)
+  - Other art
+    - Poems (7 ish)
+    - Cartoons
+      - Astronauts 
+      - Bathing in my daydreams 
+      - Break in the wall 
+  - Page population / responsive sizing 
+  - Menu and other options 
+    - Contact me 
+      - BlueSky
+      - GitHub
+      - LinkedIn
+    - About me 
+    - Commons 
 */
 
 /*-------------------------------------->
@@ -40,6 +55,10 @@ Local Utils
 .hidden {
 	opacity: 0;
 	display: none;
+}
+
+.break {
+	margin-top: 25px;
 }
 
 /*-------------------------------------->
@@ -201,7 +220,7 @@ HERO BANNER - PARALLAX
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 500px;
+  height: 800px;
   border: solid 2px #012;
   display: flex;
   padding: 10px;
