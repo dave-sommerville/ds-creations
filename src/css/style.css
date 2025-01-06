@@ -1,25 +1,4 @@
 @charset "utf-8";
-/*
-  - Adjust parallax rates 
-    - Adjust background color/image
-    - Responsive adjustment of background
-  - Prepared list of images (single)
-  - Other art
-    - Poems (7 ish)
-    - Cartoons
-      - Astronauts 
-      - Bathing in my daydreams 
-      - Break in the wall 
-  - Page population / responsive sizing 
-  - Menu and other options 
-    - Contact me 
-      - BlueSky
-      - GitHub
-      - LinkedIn
-    - About me 
-    - Commons 
-*/
-
 /*-------------------------------------->
 Local Utils 
 <--------------------------------------*/
@@ -205,29 +184,6 @@ HERO BANNER - PARALLAX
 }
 
 /*-------------------------------------->
-  Text Album
-<--------------------------------------*/
-
-.text-album {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 100px 0;
-}
-
-.text-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 800px;
-  border: solid 2px #012;
-  display: flex;
-  padding: 10px;
-  overflow-y: scroll;
-}
-
-/*-------------------------------------->
   Content Stream
 <--------------------------------------*/
 
@@ -251,39 +207,20 @@ HERO BANNER - PARALLAX
 }
 
 /*-------------------------------------->
-  Experimental "Cracks" illusion 
+  Astronaut Meme 
 <--------------------------------------*/
-:root {
-	--cracks-w: 500px;
-	--cracks-l: 400px;
+
+.astronauts {
+  background: #012 url('../img/code-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.cracks-effect-1 {
-	--_cracks-w: var(--cracks-w);
-	--_cracks-l: var(--cracks-l);
-
-	width: 400px;
-	height: 500px;
-	position: relative; 
-
-	img {
-			width: 400px;
-			height: 500px;
-	}
-
-	&::before {
-			content: "";
-			position: absolute; 
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: #fff url("../img/vs-code-bg.jpg") repeat center center;
-			background-attachment: fixed;
-			background-size: cover; 
-			z-index: -1; 
-	}
-}
 
 
 
